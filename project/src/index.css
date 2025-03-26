@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  body {
+    @apply text-gray-900 dark:text-white font-poppins;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  .btn-primary {
+    @apply px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 
+           transition-all duration-300 transform hover:scale-105 
+           hover:shadow-lg flex items-center gap-2;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 border border-gray-300 dark:border-gray-600 
+           rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 
+           transition-all duration-300 transform hover:scale-105 
+           text-gray-900 dark:text-white;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-gray-900 dark:text-white 
+           relative pb-4 after:content-[''] after:absolute after:bottom-0 
+           after:left-1/2 after:-translate-x-1/2 after:w-20 after:h-1 
+           after:bg-blue-600 dark:after:bg-blue-400;
+  }
+  
+  .section-subtitle {
+    @apply text-lg text-blue-600 dark:text-blue-400 mb-2 font-medium;
+  }
+
+  .skill-card {
+    @apply bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg
+           transform transition-all duration-300 hover:scale-105
+           hover:shadow-xl border border-gray-100 dark:border-gray-700;
+  }
+
+  .contact-card {
+    @apply bg-gray-100 dark:bg-gray-700 p-6 rounded-xl
+           transform transition-all duration-300 hover:scale-105
+           hover:shadow-xl border border-gray-200 dark:border-gray-600;
+  }
+
+  .form-input {
+    @apply w-full px-4 py-3 rounded-lg bg-gray-100 dark:bg-gray-700 
+           border-2 border-transparent focus:border-blue-500 
+           focus:bg-white dark:focus:bg-gray-600 focus:ring-0
+           transition-all duration-300;
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Gradient backgrounds */
+.gradient-bg {
+  background: linear-gradient(135deg, #6366f1 0%, #3b82f6 100%);
+}
